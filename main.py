@@ -15,7 +15,7 @@ secret_key = secrets.token_hex(16)
 #Initialising Flask app
 app = Flask(__name__)
 app.secret_key = secret_key
-UPLOAD_FOLDER = 'Images'
+UPLOAD_FOLDER = 'Image'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 #Global Hugging face token

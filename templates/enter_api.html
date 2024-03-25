@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter API Key</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/97df7ba44a.js" crossorigin="anonymous"></script>
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+        
+        function validateApiKey() {
+            var apiKey = document.getElementById("api_key").value;
+            if (!apiKey.startsWith("hf_") || apiKey.length < 10) {
+                showAlert("Invalid API key! Please provide a valid Hugging Face token.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+        <h1>Enter Your HuggingFace API Key</h1>
+        <br>
+        <h2>Why HuggingFace API Token?</h2>
+        <ul>
+            <li><i class="fa-solid fa-arrow-right"></i>Hugging Face provides and supports a wide range of open-source tools and technologies that enable users to build, train, and deploy ML models.</li>
+            <li><i class="fa-solid fa-arrow-right"></i>As we are not using OPENAI, we need to out-source an open source, therefore models available on HuggingFace are accessed through API calls</li>
+            <li><i class="fa-solid fa-arrow-right"></i>Since we are making an API call to HuggingFace, we are going to need HuggingFace Token</li>
+        </ul>
+        <br>
+        <h2>How to get your HuggingFace key?</h2>
+        <ul>
+            <li><i class="fa-solid fa-arrow-right"></i>Navigate to this URL: <a href="https://huggingface.co/settings/tokens">https://huggingface.co/settings/tokens</a></li>
+            <li><i class="fa-solid fa-arrow-right"></i>Create a write token and copy it to your clipboard</li>
+            <li><i class="fa-solid fa-arrow-right"></i>Enter your token below <i class="fas fa-arrow-down"></i></li>
+        </ul>
+
+        <form action="/enter_details" onsubmit="return validateApiKey()" method="post" class = "form_class">
+            <label for="api_key"><b>API Key:</b></label>
+            <input type="text" id="api_key" name="api_key" placeholder ="hf_XXXX" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

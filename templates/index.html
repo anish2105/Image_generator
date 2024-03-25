@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Generator</title>
+    <script src="https://kit.fontawesome.com/97df7ba44a.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Image Generator</h1><br>
+            <p>
+                Image Generator is a dynamic platform designed to provide users
+                with an immersive and innovative experience in image generation.
+                Through our utilization of open-source models, particularly leveraging
+                Hugging Face and its API calls, we offer a unique approach to creating
+                and manipulating images based on textual prompts. Our platform
+                empowers users to explore the creative possibilities of text-to-image
+                generation
+            </p>
+            <p>About the model we utilize, namely <b>SD-XL 1.0</b></p>
+            <ul>
+                <li><i class="fa-solid fa-arrow-right"></i><b>Developed by:</b> Stability AI</li>
+                <li><i class="fa-solid fa-arrow-right"></i><b>Model type:</b> Diffusion-based text-to-image generative model</li>
+                <li><i class="fa-solid fa-arrow-right"></i><b>Model Description:</b> The SD-XL 1.0 is a sophisticated model designed to
+                    generate and manipulate images based on textual prompts. It operates
+                    as a Latent Diffusion Model, utilizing two fixed, pretrained text
+                    encoders (OpenCLIP-ViT/G and CLIP-ViT/L).
+                </li>
+            </ul>
+            <form action="/enter_api_key" method="get">
+                <button type="submit">Next</button>
+            </form>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='shooting_stars.js') }}"></script>
+  </body>
+</html>

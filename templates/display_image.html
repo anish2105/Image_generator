@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  <title>Generated Image</title>
+  <style>
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .button-container a {
+        margin: 10px auto;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #3498db; 
+        color: #fff; 
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s; 
+        font-size: 1.25rem;
+        text-decoration: none;
+      }
+      .button-container a:hover{
+        background-color: #2980b9; 
+        color: black;
+      }
+      .button-container a.left {
+        margin-right: auto;
+      }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Here is your Image, please download it!!!</h1>
+      
+      <div class="button-container">
+        <a href="{{ url_for('enter_details_page') }}" class="button left">Back</a>
+        <a href="{{ url_for('download_image', image_path=image_path) }}" class="button">Download Image</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

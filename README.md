@@ -15,6 +15,7 @@ Image Generator is a dynamic platform designed to provide users with an immersiv
 - Flask
 - LangChain
 - Hugging Face API
+- Large Language Models
 
 Explore the endless creative possibilities of text-to-image generation with Image Generator. Try it out now and unleash your imagination! 🎨🖼️
 
